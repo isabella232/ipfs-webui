@@ -41,7 +41,7 @@ export const withIpfs = (Component) => {
 
         const split = res.split('/')
         const port = split[4]
-        gateway = '//' + window.location.hostname + ':' + port
+        gateway = '//' + window.location.hostname;
         this.setState({gateway})
       })
     },
