@@ -10,23 +10,6 @@ class Connection extends Component {
     }
   }
 
-  _handleClick = () => {
-    if (this.state.open) {
-      return this.setState({
-        open: false
-      })
-    }
-
-    const id = this.props.peer.toB58String()
-    this.props.ipfs.id(id, (err, peer) => {
-      if (err) return console.error(err)
-      this.setState({
-        open: true,
-        peer
-      })
-    })
-  };
-
   render () {
     let peer = ''
 
@@ -44,12 +27,7 @@ class Connection extends Component {
     const id = this.props.peer.toB58String()
     return (
       <li className={'webui-connection list-group-item ' + (this.state.open ? 'active' : '')}>
-        <button className='btn btn-link' onClick={this._handleClick}>
-          <strong>{id}</strong>
-          <br />
-          <span>{this.props.addr.toString()}</span>
-          <i className='icon fa fa-lg fa-angle-down' />
-        </button>
+        <strong>{id}</strong>
         {peer}
       </li>
     )
@@ -59,12 +37,10 @@ class Connection extends Component {
 Connection.displayName = 'Connection'
 
 Connection.propTypes = {
-  ipfs: PropTypes.object,
   location: PropTypes.object,
   bytesRead: PropTypes.number,
   bytesWritten: PropTypes.number,
-  peer: PropTypes.object,
-  addr: PropTypes.object
+  peer: PropTypes.object
 }
 
 export default Connection
