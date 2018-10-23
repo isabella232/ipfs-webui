@@ -27,7 +27,7 @@ class Connection extends Component {
     const id = this.props.peer.toB58String()
     return (
       <li className={'webui-connection list-group-item ' + (this.state.open ? 'active' : '')}>
-        <strong>{id}</strong>
+        <strong>Peer ID: {id}</strong>
         {peer}
       </li>
     )
