@@ -121,7 +121,7 @@ Tree.propTypes = {
   onTmpDirChange: PropTypes.func.isRequired,
   onCreateDir: PropTypes.func.isRequired,
   onCancelCreateDir: PropTypes.func.isRequired,
-  onCreateFiles: PropTypes.func.isRequired,
+  // onCreateFiles: PropTypes.func.isRequired,
   onRemoveDir: PropTypes.func.isRequired,
   onMoveDir: PropTypes.func.isRequired,
   // react-dnd
